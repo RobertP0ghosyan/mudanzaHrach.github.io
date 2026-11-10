@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { SectionCTA } from '@/components/SectionCTA';
+import { meta } from '@/lib/seo';
+export const metadata=meta('Sobre nosotros','Conoce cómo planteamos cada solicitud de mudanza. Información de empresa pendiente de completar.','/sobre-nosotros');
+export default function About(){return <main><section className="page-hero"><div className="container"><span className="eyebrow">SOBRE NOSOTROS</span><h1>Las buenas mudanzas empiezan con una buena conversación.</h1><p>Queremos entender qué necesitas antes de preparar una propuesta.</p></div></section><section className="content-section"><div className="container content-narrow"><span className="badge">Información de empresa pendiente</span><h2>Conocer tu caso, paso a paso</h2><p>El objetivo de esta web es facilitar una solicitud completa y clara: ruta, fecha, tamaño del traslado, accesos y servicios adicionales. Con esos datos, la empresa puede responder con más contexto.</p><p>La trayectoria, el equipo, los seguros y otros datos sobre la empresa se publicarán aquí cuando se faciliten y puedan verificarse.</p><Link href="/presupuesto" className="btn btn-blue">Cuéntanos tu mudanza <ArrowUpRight size={18}/></Link></div></section><SectionCTA/></main>}

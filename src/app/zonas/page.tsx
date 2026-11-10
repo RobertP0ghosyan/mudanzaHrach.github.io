@@ -1,0 +1,7 @@
+import Link from 'next/link';
+import { ArrowUpRight, MapPin } from 'lucide-react';
+import { getBusiness } from '@/lib/business-config';
+import { SectionCTA } from '@/components/SectionCTA';
+import { meta } from '@/lib/seo';
+export const metadata=meta('Zonas de servicio','Indica tu ciudad de origen y destino para confirmar la cobertura de tu mudanza.','/zonas');
+export default async function Zones(){const business=await getBusiness();return <main><section className="page-hero"><div className="container"><span className="eyebrow">COBERTURA</span><h1>Hablemos de tu ruta.</h1><p>{business.serviceAreas.length?'Estas son las zonas que atendemos. Si tu ruta no aparece, consúltanos.':'La zona de servicio definitiva está pendiente de configurar. Envíanos el origen y destino para confirmar si podemos atender tu mudanza.'}</p></div></section><section className="content-section"><div className="container content-narrow"><div className="callout"><MapPin color="#2459e8"/><h2>{business.serviceAreas.length?'Zonas de servicio':'Cobertura por confirmar'}</h2><p>{business.serviceAreas.length?business.serviceAreas.join(', '):'Aún no se han facilitado las ciudades o zonas en las que trabaja la empresa. No queremos prometer cobertura que no esté confirmada.'}</p></div><p>En el formulario puedes indicar ambas ciudades, los códigos postales y si el traslado es local o nacional.</p><Link href="/presupuesto" className="btn btn-blue">Consultar mi ruta <ArrowUpRight size={18}/></Link></div></section><SectionCTA/></main>}
